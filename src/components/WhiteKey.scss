@@ -1,5 +1,26 @@
+@import '../assets/main.scss';
+
 .white-key {
-    width: 100px;
-    height: 400px;
+    cursor: pointer;
+    width: 70px;
+    height: 270px;
     background-color: white;
-}
+    box-shadow: 
+        inset 2px 2px 0 #1a1a1a,  /* haut et gauche */
+        inset -1px -1px 0 #1a1a1a; /* droite et bas */
+    border-radius: 0 0 4px 4px;
+
+    &:hover {
+        background-color: #f0f0f0;
+    }
+
+    span {
+        font-size: 22px;
+        font-weight: 500;
+        width: 100px;
+        transform: rotate(-90deg);
+        display: block;
+        display: flex;
+        margin-top: 200px;
+    }
+} 

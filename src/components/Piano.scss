@@ -1,6 +1,13 @@
+@import '../assets/main.scss';
+
 .piano {
-    height: 300px;
-    width: 700px;
-    border: 1px solid black;
+    position: relative;
+    height: 315px;
+    width: 262px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    background: $custom-black;
 }

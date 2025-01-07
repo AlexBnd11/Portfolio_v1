@@ -1,5 +1,15 @@
+@import '../assets/main.scss';
+
 .black-key {
-    background-color: black;
-    height: 200px;
+    background: $custom-black;
+    height: 140px;
     width: 50px;
+    left: 66px;
+    position: absolute;
+    top: 46px;
+    border-radius: 0 0 5px 5px;
+}
+
+.black-key:nth-child(2) {
+    left: 146px;
 }
