@@ -1,4 +1,4 @@
-@import '../assets/main.scss';
+@use '../App.scss' as *;
 
 .black-key {
     background: $custom-black;

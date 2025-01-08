@@ -1,0 +1,66 @@
+.card {
+    width: 400px;
+    height: 140px;
+    margin: 0 auto;
+    background-color: #011522;
+    border-radius: 8px;
+    z-index: 1;
+    position: relative;
+
+    &__content {
+        font-family: 'Source Code Pro';
+        padding: 0px 15px 5px;
+
+        &__title {
+            color: #50FA7B;
+        }
+
+        p {
+            color: #F2F2F2;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        top: -32px;
+        right: 10px;
+        padding: 10px;
+
+        img {
+            width: 60px;
+        }
+    }
+}
+  
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+  
+.circle {
+    padding: 0 4px;
+}
+  
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+  
+.red {
+    background-color: #ff605c;
+}
+  
+.yellow {
+    background-color: #ffbd44;
+}
+  
+.green {
+    background-color: #00ca4e;
+}
+   

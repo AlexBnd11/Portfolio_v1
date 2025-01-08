@@ -1,19 +1,43 @@
 import './App.scss';
+import React, { useState } from 'react';
 import Piano from './components/Piano';
 import About from './components/pages/About';
-import Modal from 'react-modal';
+import Projects from './components/pages/Projects';
 
-Modal.setAppElement('#root');
 
 export default function App() {
-  const [AboutDisplay, setAboutDisplay] = useState(false);
+  const [displayAbout, setDisplayAbout] = useState(false);
+  const [displayProjects, setDisplayProject] = useState(false);
+  
+  const handleToggles = () => {
+    if (displayAbout) {
+      setDisplayProject(false);
+    }
+    if (displayProjects) {
+      setDisplayAbout(false);
+    }
+};
+  const handleToggleAbout = () => {
+    setDisplayAbout(!displayAbout);
+    handleToggles();
+  };
+
+  const handleToggleProject = () => {
+    setDisplayProject(!displayProjects);
+    handleToggles();
+  };
+
 
   return (
     <main>
       <Piano 
-        
+        onToggleAbout={handleToggleAbout} 
+        onToggleProjects={handleToggleProject}
+        displayAbout={displayAbout} 
+        displayProjects={displayProjects}
       />
-      <About display={AboutDisplay}/>
+      <About display={displayAbout} />
+      <Projects display={displayProjects} />
     </main>
   );
 };

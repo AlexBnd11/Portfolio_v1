@@ -1,8 +1,8 @@
-@import '../assets/main.scss';
+@use '../App.scss' as *;
 
 .piano {
-    position: relative;
     height: 315px;
+    z-index: 1;
     width: 262px;
     border-radius: 10px;
     display: flex;
