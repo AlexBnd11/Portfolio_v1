@@ -1,5 +1,96 @@
 .project_card {
     width: 270px;
     height: 150px;
-    background-color: black;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    .project_card_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+
+        h3 {
+            color: #fff7f4;
+        }
+        
+        button {
+            cursor: pointer;
+            background-color: #fff7f4;
+            color: #8B4513;
+            border: none;
+            border-radius: 10px;
+            padding: 9px 18px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.project_modal {
+    background-color: #fff7f4;
+    border-radius: 30px;
+    padding: 40px;
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    .project_description {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .project_screenshots {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+
+        img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+}
+
+.project_modal_overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
 }

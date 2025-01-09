@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Alpine La Rochelle",
+        "cover": "alpine-cover.JPG",
+        "tags": ["Backend", "React", "Backoffice", "Calendrier", "Client" ],
+        "decription": "Le centre Alpine de La Rochelle m'a contacté pour effectuer une refonte de leur site. L'idée était de refaire un design attractif et plusieurs fonctionnalités.",
+        "skills": "L'entreprise souhaitant implémenter des actualités ainsi qu'un calendrier d'évènements, j'ai donc mis en place un serveur dans le backend et crée un back-office simple pour que les collaborateurs puissent être autonomes. Les principales difficultés que j'ai rencontrées ont été la mise en place de la relation entre les composants, le back-office et le backend.",
+        "screenshots": ["alpine-screenshot1.JPG", "alpine-screenshot2.JPG"] 
+    },
+    {
+        "name": "Jade Olléac",
+        "cover": "jade-cover.png",
+        "github_link": "https://github.com/AlexBnd11/Jade-Olleac",
+        "tags": ["Formulaire", "Client" ],
+        "decription": "Ma première réalisation pour un client. C'est un site vitrine avec un formulaire pour une psychologue clinicienne.",
+        "skills": "Malgré qu'elle soit ma première création professionnelle (avec les défauts qui vont avec), je suis fier de ce site, c'est ce projet qui m'a permis de mettre en place professionnellement mes compétences pour la première fois.",
+        "screenshots": ["jade-screenshot1.png"] 
+    },
+    {
+        "name": "Sophie Bluel",
+        "cover": "sophie-cover.JPG",
+        "github_link": "https://github.com/AlexBnd11/Sophie-Bluel",
+        "tags": ["Javascript", "Formulaire", "Modale" ],
+        "decription": "",
+        "skills": "",
+        "screenshots": ["alpine-screenshot1.JPG", "alpine-screenshot2.JPG"] 
+    },
+    {
+        "name": "Kasa",
+        "cover": "kasa-cover.JPG",
+        "github_link": "https://github.com/AlexBnd11/Kasa",
+        "tags": ["React", "Cartes" ],
+        "decription": "",
+        "skills": "",
+        "screenshots": ["alpine-screenshot1.JPG", "alpine-screenshot2.JPG"] 
+    },
+    {
+        "name": "Mon Vieux Grimoire",
+        "cover": "grimoire-cover.JPG",
+        "github_link": "https://github.com/AlexBnd11/Mon-Vieux-Grimoire",
+        "tags": ["Node.js", "Express" ],
+        "decription": "",
+        "skills": "",
+        "screenshots": ["grimoire-screenshot1.JPG", "grimoire-screenshot2.JPG"] 
+    },
+    {
+        "name": "Groupe Michel",
+        "cover": "gm-cover.JPG",
+        "tags": ["Maintenance", "PHP", "Wordpress" ],
+        "decription": "",
+        "skills": "",
+        "screenshots": ["alpine-screenshot1.JPG", "alpine-screenshot2.JPG"] 
+    }
+]
