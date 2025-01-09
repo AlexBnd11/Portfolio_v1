@@ -4,18 +4,20 @@ import WhiteKey from './WhiteKey';
 import './piano.scss';
 import { motion } from 'framer-motion';
 
-export default function Piano({onToggleAbout, onToggleProjects, displayAbout, displayProjects}) {
+export default function Piano({onToggleAbout, onToggleProjects, onToggleContact, displayAbout, displayProjects, displayContact}) {
   return (
     <motion.div 
       className="piano"
       style={{
         position: 'absolute',
         transform: 'translateX(-50%)',
-        left: displayProjects ? '15%' : '43%',
         top: displayAbout ? '5%' : '30%',
+        right: displayContact ? '15%' : '43%',
+        left: displayProjects ? '15%' : '43%',
       }}
       animate={{
         top: displayAbout ? '5%' : '30%',
+        right: displayContact ? '9%' : '42%',
         left: displayProjects ? '9%' : '42%',
         scale: displayAbout ? 0.75 : 1
       }}
@@ -39,7 +41,11 @@ export default function Piano({onToggleAbout, onToggleProjects, displayAbout, di
           onClick={onToggleProjects}
         />
         <BlackKey />
-        <WhiteKey noteName="Contact" chord="G"/>
+        <WhiteKey
+          noteName="Contact"
+          chord="G"
+          onClick={onToggleContact}
+        />
       </div>
     </motion.div>
   );
