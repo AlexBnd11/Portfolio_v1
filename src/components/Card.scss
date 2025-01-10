@@ -1,15 +1,21 @@
 .card {
-    width: 400px;
-    height: 140px;
+    width: clamp(250px, 25vw, 400px);
+    height: clamp(105px, 8.5vw, 140px);
     margin: 0 auto;
     background-color: #011522;
     border-radius: 8px;
     z-index: 1;
     position: relative;
 
+    @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        padding: 2.5vw;
+    }
+
     &__content {
         font-family: 'Source Code Pro';
         padding: 0px 15px 5px;
+        font-size: clamp(12px, 0.9vw, 16px);
 
         &__title {
             color: #50FA7B;
@@ -28,7 +34,7 @@
         padding: 10px;
 
         img {
-            width: 60px;
+            width: 58px;
         }
     }
 }

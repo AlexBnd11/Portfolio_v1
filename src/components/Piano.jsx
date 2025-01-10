@@ -1,25 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BlackKey from './BlackKey';
 import WhiteKey from './WhiteKey';
 import './piano.scss';
 import { motion } from 'framer-motion';
 
 export default function Piano({onToggleAbout, onToggleProjects, onToggleContact, displayAbout, displayProjects, displayContact}) {
+  const calculateScale = () => {
+    if (window.innerWidth > 1920) return 1;
+    if (window.innerWidth < 1000) return 1;
+    return window.innerWidth / 1920;
+  };
+
+  const [scale, setScale] = useState(calculateScale());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScale(calculateScale());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <motion.div 
       className="piano"
       style={{
         position: 'absolute',
-        transform: 'translateX(-50%)',
-        top: displayAbout ? '5%' : '30%',
-        right: displayContact ? '15%' : '43%',
-        left: displayProjects ? '15%' : '43%',
+        top: displayAbout ? '-5%' : '30%',
+        left: '50%',
       }}
       animate={{
-        top: displayAbout ? '5%' : '30%',
-        right: displayContact ? '9%' : '42%',
-        left: displayProjects ? '9%' : '42%',
-        scale: displayAbout ? 0.75 : 1
+        top: displayAbout ? '-5%' : '30%',
+        left: displayProjects 
+          ? '9%' 
+          : displayContact 
+            ? '75%' 
+            : '50%',
+        x: '-50%',
+        scale: displayAbout ? 0.8 * scale : scale
       }}
       transition={{ 
         duration: 0.2,
