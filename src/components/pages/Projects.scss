@@ -16,6 +16,12 @@
         margin-bottom: 20px;
     }
 
+    @media (max-width: 1440px) and (min-width: 1000px) {
+        padding: 40px;
+        width: 70vw;
+        right: 5%;
+    }
+
     h2 {
         font-family: 'Space Mono';
         font-size: clamp(24px, 2.5vw, 46px);
@@ -26,7 +32,7 @@
     .projects_cards_container {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 30px 20px;
         justify-content: space-around;
     }
 }

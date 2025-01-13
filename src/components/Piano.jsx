@@ -5,13 +5,17 @@ import './piano.scss';
 import { motion } from 'framer-motion';
 
 export default function Piano({onToggleAbout, onToggleProjects, onToggleContact, displayAbout, displayProjects, displayContact}) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1001);
+  const [scale, setScale] = useState(1);
   
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1000);
+      setIsMobile(window.innerWidth < 1001);
+      const newScale = Math.min(1, window.innerWidth / 1920);
+      setScale(newScale);
     };
 
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -21,7 +25,7 @@ export default function Piano({onToggleAbout, onToggleProjects, onToggleContact,
     marginTop: '20px',
   } : {
     position: 'absolute',
-    top: displayAbout ? '0%' : '25%',
+    top: displayAbout ? '-1%' : '25%',
     left: '50%',
     transform: 'translateX(-50%)'
   };
@@ -31,14 +35,14 @@ export default function Piano({onToggleAbout, onToggleProjects, onToggleContact,
       className="piano"
       style={containerStyles}
       animate={!isMobile ? {
-        top: displayAbout ? '0%' : '25%',
+        top: displayAbout ? '-1%' : '25%',
         left: displayProjects 
           ? '13%' 
           : displayContact 
             ? '87%' 
             : '50%',
         x: '-50%',
-        scale: displayAbout ? 0.8 : 1
+        scale: displayAbout ? scale * 0.8 : scale
       } : {}}
       transition={{ 
         duration: 0.2,
