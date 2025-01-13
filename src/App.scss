@@ -21,4 +21,11 @@ main {
     align-items: center;
     height: 100vh;
     position: relative;
+
+    @media (max-width: 1000px) {
+        position: static;
+        height: auto;
+        gap: 50px;
+        align-items: center;
+    }
 }

@@ -46,15 +46,17 @@ export default function ProjectCard({ name, cover, github_link, tags, decription
                             }}
                         >
                             <div className='project_description'>
-                                <h4>Description du projet</h4>
-                                <div className='project_card_tags_container'>
-                                    {github_link && <div className='project_card_github-tag'>
-                                        <a href={github_link} target='_blank'>GitHub</a>
-                                    </div>}
-                                    <div className='project_card_tags'>
-                                        {tags.map((tag, index) => (
-                                            <span key={index}>{tag}</span>
-                                        ))}
+                                <div className='project_description_title'>
+                                    <h4>Description du projet</h4>
+                                    <div className='project_card_tags_container'>
+                                        {github_link && <div className='project_card_github-tag'>
+                                            <a href={github_link} target='_blank'>Lien GitHub</a>
+                                        </div>}
+                                        <div className='project_card_tags'>
+                                            {tags.map((tag, index) => (
+                                                <span key={index}>{tag}</span>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                                 <p>{decription}</p>

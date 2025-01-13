@@ -5,41 +5,41 @@ import './piano.scss';
 import { motion } from 'framer-motion';
 
 export default function Piano({onToggleAbout, onToggleProjects, onToggleContact, displayAbout, displayProjects, displayContact}) {
-  const calculateScale = () => {
-    if (window.innerWidth > 1920) return 1;
-    if (window.innerWidth < 1000) return 1;
-    return window.innerWidth / 1920;
-  };
-
-  const [scale, setScale] = useState(calculateScale());
-
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
+  
   useEffect(() => {
     const handleResize = () => {
-      setScale(calculateScale());
+      setIsMobile(window.innerWidth < 1000);
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const containerStyles = isMobile ? {
+    position: 'static',
+    marginTop: '20px',
+  } : {
+    position: 'absolute',
+    top: displayAbout ? '0%' : '25%',
+    left: '50%',
+    transform: 'translateX(-50%)'
+  };
+
   return (
     <motion.div 
       className="piano"
-      style={{
-        position: 'absolute',
-        top: displayAbout ? '-5%' : '25%',
-        left: '50%',
-      }}
-      animate={{
-        top: displayAbout ? '-5%' : '25%',
+      style={containerStyles}
+      animate={!isMobile ? {
+        top: displayAbout ? '0%' : '25%',
         left: displayProjects 
           ? '13%' 
           : displayContact 
             ? '87%' 
             : '50%',
         x: '-50%',
-        scale: displayAbout ? 0.8 * scale : scale
-      }}
+        scale: displayAbout ? 0.8 : 1
+      } : {}}
       transition={{ 
         duration: 0.2,
         type: "spring",

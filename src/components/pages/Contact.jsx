@@ -93,25 +93,29 @@ export default function Contact({ display }) {
                             </form>
                         </div>
                         <div className='contact_right'>
-                            <h3>Rejoignez-moi sur les réseaux :</h3>
+                            <h3>Rejoignez-moi sur les réseaux</h3>
                             <div className='contact_right_cards-container'>
                                 <SocialCard
                                     logo="github-logo.png"
                                     title="GitHub"
                                     fontColor="white"
                                     color="#1a1a1a"
+                                    link="https://github.com/AlexBnd11"
+
                                 />
                                 <SocialCard
                                     logo="linkedin-logo.png"
                                     title="LinkedIn"
                                     fontColor="white"
                                     color="#0077B5"
+                                    link="https://www.linkedin.com/in/alex-bonniard-25957817a/"
                                 />
                                 <SocialCard
                                     logo="x-logo.png"
                                     title="X"
                                     fontColor="white"
                                     color="black"
+                                    link="https://x.com/AlexBnd_Dev"
                                 />
                             </div>
                         </div>

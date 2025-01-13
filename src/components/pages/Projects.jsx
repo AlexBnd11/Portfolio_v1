@@ -33,9 +33,6 @@ export default function Project({ display }) {
                             />
                         ))}
                     </div>
-                    <div className='social_proof_container'>
-                        <h3>Ils me font confiance :</h3>
-                    </div>
                 </motion.section>
             )}
         </AnimatePresence>

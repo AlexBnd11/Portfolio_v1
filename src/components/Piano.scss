@@ -1,6 +1,7 @@
 @use '../App.scss' as *;
 
 .piano {
+    position: relative;
     height: 315px;
     z-index: 1;
     width: 262px;
@@ -10,5 +11,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: end;
-    background: $custom-black;
+    background: rgb(22, 22, 22);
+
+    @media (max-width: 1000px) {
+            margin: 0 auto;
+    }
 }

@@ -1,13 +1,20 @@
 .projects {
     background: #fff7f4;
-    width: clamp(300px, 67vw, 65vw);
+    width: clamp(345px, 67vw, 65vw);
     max-height: 80vh;
     padding: 50px;
     border-radius: 40px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     margin-bottom: 80px;
     position: absolute;
-    right: 8%;
+    right: 7%;
+
+    @media (max-width: 1000px) {
+        position: static;
+        max-height: none;
+        padding: 30px;
+        margin-bottom: 20px;
+    }
 
     h2 {
         font-family: 'Space Mono';
@@ -21,13 +28,5 @@
         flex-wrap: wrap;
         gap: 30px;
         justify-content: space-around;
-    }
-    .social_proof_container {
-        margin-top: 50px;
-
-        h3 {
-            font-size: 20px;
-            margin-top: 20px;
-        }
     }
 }

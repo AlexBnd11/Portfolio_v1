@@ -18,12 +18,12 @@
     },
     {
         "name": "Sophie Bluel",
-        "cover": "sophie-cover.JPG",
+        "cover": "bluel-cover.JPG",
         "github_link": "https://github.com/AlexBnd11/Sophie-Bluel",
         "tags": ["Javascript", "Formulaire", "Modale" ],
         "decription": "",
         "skills": "",
-        "screenshots": ["alpine-screenshot1.JPG", "alpine-screenshot2.JPG"] 
+        "screenshots": ["bluel-screenshot1.JPG", "bluel-screenshot2.JPG"] 
     },
     {
         "name": "Kasa",
@@ -32,7 +32,7 @@
         "tags": ["React", "Cartes" ],
         "decription": "",
         "skills": "",
-        "screenshots": ["alpine-screenshot1.JPG", "alpine-screenshot2.JPG"] 
+        "screenshots": ["kasa-screenshot1.JPG", "kasa-screenshot2.JPG"] 
     },
     {
         "name": "Mon Vieux Grimoire",

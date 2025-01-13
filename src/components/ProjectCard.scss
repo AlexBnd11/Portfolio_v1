@@ -4,7 +4,11 @@
     border-radius: 30px;
     position: relative;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
 
     img {
         width: 100%;
@@ -62,7 +66,6 @@
 .project_modal {
     background-color: #fff7f4;
     padding: 40px;
-    padding-bottom: 30px;
     border-radius: 40px;
     z-index: 1001;
     max-width: 90%;
@@ -80,8 +83,16 @@
         flex-direction: column;
         gap: 20px;
 
+        &_title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+
+        }
+
         h4 {
-            font-size: 32px;
+            font-size: 40px;
             margin-bottom: 20px;
         }
 
@@ -93,13 +104,13 @@
         }
 
         .project_card_github-tag {
-            padding: 5px 14px;
+            padding: 4px 12px;
             border-radius: 13px;
             background-color: #24292e;
             
             a {
                 color: #fff7f4;
-                font-size: 16px;
+                font-size: 15px;
                 text-decoration: none;
                 font-weight: bold;
             }
@@ -112,11 +123,11 @@
             gap: 10px;
 
             span {
-                padding: 5px 14px;
+                padding: 4px 12px;
                 border-radius: 13px;
                 background-color: #8B4513;
                 color: #fff7f4;
-                font-size: 16px;
+                font-size: 15px;
             }
         }
 
@@ -134,12 +145,15 @@
         width: 100%;
         flex-wrap: wrap;
         padding-top: 50px;
+        
 
         img {
-            width: 300px;
-            height: 200px;
+            width: 330px;
+            height: 250px;
             object-fit: cover;
             border-radius: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
         }
     }
 
