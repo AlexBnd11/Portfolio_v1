@@ -27,15 +27,15 @@ export default function Piano({onToggleAbout, onToggleProjects, onToggleContact,
       className="piano"
       style={{
         position: 'absolute',
-        top: displayAbout ? '-5%' : '30%',
+        top: displayAbout ? '-5%' : '25%',
         left: '50%',
       }}
       animate={{
-        top: displayAbout ? '-5%' : '30%',
+        top: displayAbout ? '-5%' : '25%',
         left: displayProjects 
-          ? '9%' 
+          ? '13%' 
           : displayContact 
-            ? '75%' 
+            ? '87%' 
             : '50%',
         x: '-50%',
         scale: displayAbout ? 0.8 * scale : scale

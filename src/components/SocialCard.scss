@@ -1,0 +1,26 @@
+.social-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 55px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translate(-1px, -2px);
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+    }
+
+    span {
+        font-weight: 900;
+    }
+}
