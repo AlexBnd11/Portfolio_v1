@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BlackKey from './BlackKey';
 import WhiteKey from './WhiteKey';
-import './piano.scss';
+import './Piano.scss';
 import { motion } from 'framer-motion';
 
 export default function Piano({onToggleAbout, onToggleProjects, onToggleContact, displayAbout, displayProjects, displayContact}) {
