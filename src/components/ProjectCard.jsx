@@ -41,7 +41,6 @@ export default function ProjectCard({ name, cover, github_link, tags, decription
                                 position: "fixed",
                                 top: "50%",
                                 left: "50%",
-                                width: "75vw",
                                 transform: "translate(-50%, -50%)"
                             }}
                         >

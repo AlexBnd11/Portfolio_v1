@@ -91,14 +91,22 @@
     padding: 40px;
     border-radius: 40px;
     z-index: 1001;
-    max-width: 90%;
     max-height: 90vh;
+    width: 75vw;
     overflow-y: auto;
     scrollbar-width: none;  /* Pour Firefox */
     -ms-overflow-style: none;  /* Pour Internet Explorer et Edge */
     
     &::-webkit-scrollbar {
         display: none;  /* Pour Chrome, Safari et Opera */
+    }
+
+    @media (max-width: 550px) {
+        width: 90%;
+    }
+
+    @media (max-width: 1000px) {
+        max-height: 75vh;
     }
 
     .project_description {
@@ -112,11 +120,20 @@
             align-items: center;
             gap: 30px;
 
+            @media (max-width: 1400px) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
         }
 
         h4 {
             font-size: 38px;
             margin-bottom: 20px;
+
+            @media (max-width: 750px) {
+                margin-top: 12px;
+            }
         }
 
         .project_card_tags_container {
@@ -162,7 +179,7 @@
     .project_screenshots {
         display: flex;
         flex-direction: row;
-        gap: 15px;
+        gap: 20px;
         justify-content: space-around;
         align-items: center;
         width: 100%;
@@ -172,11 +189,15 @@
 
         img {
             width: 330px;
-            height: 250px;
+            height: 240px;
+            max-width: 100%;
             object-fit: cover;
             border-radius: 10px;
             box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
+            @media (max-width: 500px) {
+                height: 180px;
+            }
         }
     }
 
@@ -190,6 +211,11 @@
         &:hover {
             transform: scale(1.1);
             transition: transform 0.3s ease-in-out;
+        }
+
+        @media (max-width: 750px) {
+            top: 15px;
+            right: 20px;
         }
 
         img {
@@ -210,4 +236,5 @@
     align-items: center;
     justify-content: center;
     z-index: 1000;
+
 }

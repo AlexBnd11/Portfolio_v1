@@ -11,7 +11,7 @@ export default function Piano({onToggleAbout, onToggleProjects, onToggleContact,
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1001);
-      const newScale = Math.min(1, window.innerWidth / 1920);
+      const newScale = Math.min(1, window.innerWidth / 1800);
       setScale(newScale);
     };
 
