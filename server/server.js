@@ -15,7 +15,9 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-app.use(cors());
+app.use(cors({
+    origin: ['https://alexbonniard.dev', 'https://www.alexbonniard.dev']
+}));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '..', 'dist')));
