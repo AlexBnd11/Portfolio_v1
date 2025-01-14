@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -17,29 +18,31 @@ const transporter = nodemailer.createTransport({
 app.use(cors());
 app.use(express.json());
 
-app.get ('/test', (req, res) => {
-    res.json({message: "Le serveur fonctionne !"})
-});
+app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 app.post('/api/contact', async (req, res) => {
     const { email, message } = req.body;
     
-    // Validation du format email
+    // Validation plus complète
+    if (!email || !message) {
+        return res.status(400).json({ error: 'Email et message sont requis' });
+    }
+    
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         return res.status(400).json({ error: 'Format email invalide' });
     }
     
-    // Protection XSS basique
-    if (message.includes('<script>')) {
-        return res.status(400).json({ error: 'Contenu non autorisé' });
-    }
+    // Protection XSS améliorée
+    const sanitizedMessage = message
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
 
     try {
         const mailOptions = {
             from: email,
             to: process.env.EMAIL_USER,
             subject: 'Nouveau message du portfolio',
-            text: `Message de ${email}:\n\n${message}`
+            text: `Message de ${email}:\n\n${sanitizedMessage}`
         };
 
         await transporter.sendMail(mailOptions);
@@ -49,12 +52,24 @@ app.post('/api/contact', async (req, res) => {
             message: "Email envoyé avec succès"
         });
     } catch (error) {
+        console.error('Erreur d\'envoi d\'email:', error);
         res.status(500).json({
             success: false,
             message: "Erreur lors de l'envoi de l'email"
         });
     }
+});
 
+app.use('*', (req, res) => {
+    res.status(404).json({ error: 'Route non trouvée' });
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({
+        success: false,
+        message: 'Erreur interne du serveur'
+    });
 });
 
 app.listen(port, () => {
