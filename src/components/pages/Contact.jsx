@@ -14,10 +14,14 @@ export default function Contact({ display }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
+        const apiUrl = process.env.NODE_ENV === 'production' 
+            ? '/api/contact'
+            : 'http://localhost:3000/api/contact';
+        
         setStatus({ message: 'Envoi en cours...', type: 'loading' });
         
         try {
-            const response = await fetch('http://localhost:3001/api/contact', {
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

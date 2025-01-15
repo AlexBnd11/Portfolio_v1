@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.use(cors({
-    origin: ['https://alexbonniard.dev', 'https://www.alexbonniard.dev']
+    origin: ['https://alexbonniard.dev', 'https://www.alexbonniard.dev', 'http://localhost:3000']
 }));
 app.use(express.json());
 
@@ -62,8 +62,8 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
-app.use('*', (req, res) => {
-    res.status(404).json({ error: 'Route non trouvée' });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
 });
 
 app.use((err, req, res, next) => {
