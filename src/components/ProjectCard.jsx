@@ -6,6 +6,7 @@ import close_icon from '../assets/images/close-icon.png';
 
 export default function ProjectCard({ name, cover, github_link, tags, decription, skills, screenshots }) {
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
   
     const getImageUrl = (imageName) => {
         return new URL(`../assets/images/projects/${imageName}`, import.meta.url).href;
@@ -63,12 +64,51 @@ export default function ProjectCard({ name, cover, github_link, tags, decription
                             </div>
                             <div className='project_screenshots'>
                                 {screenshots.map((screenshot, index) => (
-                                    <img src={getImageUrl(screenshot)} alt={screenshot} key={index} />
+                                    <img 
+                                        src={getImageUrl(screenshot)} 
+                                        alt={screenshot} 
+                                        key={index}
+                                        onClick={() => setSelectedImage(getImageUrl(screenshot))}
+                                        style={{ cursor: 'pointer' }}
+                                    />
                                 ))}
                             </div>
                             <div className='project_modal_close' onClick={() => setModalIsOpen(false)}>
                                 <img src={close_icon} alt='close' />
                             </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+                {selectedImage && (
+                    <>
+                        <motion.div 
+                            className='image_overlay'
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedImage(null)}
+                        />
+                        <motion.div
+                            className='enlarged-image-container'
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.5 }}
+                            style={{
+                                position: 'fixed',
+                                top: '30%',
+                                left: '10%',
+                                transform: 'translate(-50%, -50%)',
+                                zIndex: 1002
+                            }}
+                        >
+                            <img 
+                                src={selectedImage} 
+                                alt="Enlarged view"
+                                style={{ maxHeight: '70vh', maxWidth: '80vw', objectFit: 'contain' }}
+                            />
                         </motion.div>
                     </>
                 )}
